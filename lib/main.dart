@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   return runApp(
@@ -24,11 +25,13 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
-  int leftDiceNumber = 1;
-  int rightDiceNumber = 2;
+  var rng = new Random();
 
   @override
   Widget build(BuildContext context) {
+    int leftDiceNumber = (rng.nextInt(6) + 1);
+    int rightDiceNumber = (rng.nextInt(6) + 1);
+
     return Center(
       child: Row(
         children: <Widget>[
